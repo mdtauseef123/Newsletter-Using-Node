@@ -22,7 +22,7 @@ app.post("/", function(req,res){
     const user_email=req.body.user_email;
     //MailChimp API End-Point
     //us21 is copied from API KEY last characters which represents the server number which is alloted to us.
-    const url="https://us21.api.mailchimp.com/3.0/lists/a6e10d00fb";
+    const url="https://usX.api.mailchimp.com/3.0/lists/a6e10d00fb";
     //Data to be posted on Mail-Chimp Server
     const data={
         members: [
@@ -44,7 +44,7 @@ app.post("/", function(req,res){
     // We can use anything in-place of mdtauseef123. It just should be the string and after : it would contain API KEY.
     const options={
         method: "POST",
-        auth: "mdtauseef123:a01fe487edc9677976c0296aef7aea9cb-us21"
+        auth: "mdtauseef123:{API_KEY}"
     };
     //Making request to Mailchimp Sever using request() and storing that request in a variable called request
     //We use request in order to send the above JSON-Data using write();
@@ -65,5 +65,3 @@ app.post("/failure", function(req,res){
     res.redirect("/");
 });
 
-//API Key:- 01fe487edc9677976c0296aef7aea9cb-us21
-//Audience ID:- a6e10d00fb
